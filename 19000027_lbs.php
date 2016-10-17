@@ -314,7 +314,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetMute($E[8]['value']);
 			$mute = $sonos->GetMute();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ."($mute));}
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ".($mute));}
 			setLogicElementVar($id,8,0);
 		}
 		if ($V[9]==1) { //Play Radio per uri
