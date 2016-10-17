@@ -1,9 +1,9 @@
 ###[DEF]###
-[name		= SONOS Baustein (v2.6)	]
+[name		= SONOS Baustein (v2.6.1)	]
 
 [e#1	TRIGGER		= Starten	#init=1]
 [e#2	IMPORTANT		= ipAddr	#init=192.168.0.15 			]	
-[e#3	TRIGGER		= Play/Pause		]	
+[e#3	TRIGGER		= Play		]	
 [e#4	TRIGGER		= Stop		]	
 [e#5	TRIGGER		= Pause		]	
 [e#6	TRIGGER		= Volume	]	
@@ -46,7 +46,7 @@
 [a#16		= Crossfade]
 [a#17		= CurrentURI]
 
-[v#1		= 2.5	] //Version
+[v#1		= 2.6.1	] //Version
 [v#2		= 0	] //LBS Exec
 [v#3		= 0	] //Play/Pause
 [v#4		= 0	] //Stop
@@ -150,7 +150,7 @@ A13: Status Treble (-10 bis 10)
 A14: Status Mute (0=Off / 1=On)
 A15: Status Playmode (0= "NORMAL", 1= "REPEAT_ALL", 2= "REPEAT_ONE", 3= "SHUFFLE_NOREPEAT", 4= "SHUFFLE", 5= "SHUFFLE_REPEAT_ONE")
 A16: Status Crossfade (0= Off / 1=On)
-A17: CurrentURI Einfach an der Sonos App Radiosender oder Playliste auswÃ¤hlen. (dieser URI kann als Playliste oder Radiosender in ein KO kopiert werden und dann an E9 oder E10 Übergeben werden.  Wir nur im Debug ausgegeben!)
+A17: CurrentURI Einfach an der Sonos App Radiosender oder Playliste auswÃ¤hlen. (dieser URI kann als Playliste oder Radiosender in ein KO kopiert werden und dann an E9 oder E10 Übergeben werden.  Wird nur im Debug ausgegeben!)
 
 Changelog:
 ==========
@@ -158,8 +158,7 @@ v1.5: Initial version
 v2.0: Performance und Code Anpassung
 v2.2: Send by change bei den Ausgängen
 v2.5: Send by change bei den A1 Ausgang angepasst
-v2.6: Play und Pause auf einen Eingang gelegt
-v2.7: Lautstärke up/down hinzugefügt
+v2.6: Lautstärke up/down hinzugefügt
 
 ###[/HELP]###
 
@@ -176,8 +175,8 @@ function LB_LBSID($id) {
 				callLogicFunctionExec(LBSID,$id);
 			}	
 		}
-		if ($E[3]['refresh']==1 && ($E[3]['value']==1 || $E[3]['value']==0 )){ //Play/Pause
-			setLogicElementVar($id,3,$E[3]['value']);
+		if ($E[3]['refresh']==1 && ($E[3]['value']==1 )){ //Play
+			setLogicElementVar($id,3,1);
 		}
 		if ($E[4]['refresh']==1 && $E[4]['value']==1 ){ //Stop
 			setLogicElementVar($id,4,1);
@@ -261,7 +260,7 @@ $V=getLogicElementVarAll($id);
 if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> SONOS EXEC started.");}
 			exec("ping -c 2 $ip", $array, $return);
 			if($return){
-			debug($id,'SONOS - ECEX : Ping nicht erreichbar: '.$ip);
+			debug($id,'SONOS - EXEC : Ping nicht erreichbar: '.$ip);
 			setLogicElementVar($id,2,0);
 			die();
 			}
@@ -282,12 +281,6 @@ $transportInfo=$sonos->GetTransportInfo();
 		if ($V[3]==1) {//Play
 			$sonos->Play();
 			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Play");}
-			setLogicElementVar($id,3,0);
-		}
-		//20161014 - nur einen Eingang für Play und Pause verwenden
-		elseif ($V[3]==0) {//Play-Pause
-			$sonos->Pause();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Play-Pause");}
 			setLogicElementVar($id,3,0);
 		}
 		if ($V[4]==1) {//Stop
@@ -314,14 +307,14 @@ $transportInfo=$sonos->GetTransportInfo();
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetPlayMode(round($E[7]['value']));
 			$playmode = $sonos->GetTransportSettings();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ($playmode)");}
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".($playmode));}
 			setLogicElementVar($id,7,0);
 		}
 		if ($V[8]==1) {//Mute
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetMute($E[8]['value']);
 			$mute = $sonos->GetMute();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ($mute)");}
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ."($mute));}
 			setLogicElementVar($id,8,0);
 		}
 		if ($V[9]==1) { //Play Radio per uri
@@ -365,28 +358,28 @@ $transportInfo=$sonos->GetTransportInfo();
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetLoudness($E[14]['value']);
 			$loudness = $sonos->GetLoudness();
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Loudness: ($loudness)");}
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Loudness: ".($loudness));}
 			setLogicElementVar($id,14,0);
 		}
 		if ($V[15]==1) { //Bass
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetBass($E[15]['value']);
 			$bass = $sonos->GetBass();
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Bass: ($bass)");}
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Bass: ".($bass));}
 			setLogicElementVar($id,15,0);
 		}
 		if ($V[16]==1) { //Treble
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetTreble($E[16]['value']);
 			$treble = $sonos->GetTreble();
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Treble: ($treble)");}
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Treble: ".($treble));}
 			setLogicElementVar($id,16,0);
 		}
 		if ($V[17]==1) { //Crossfade
 			$E=getLogicEingangDataAll($id); 
 			$sonos->SetCrossfade($E[17]['value']);
 			$crossfade = $sonos->GetLoudness();
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Crossfade: ($crossfade)");}
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Crossfade: ".($crossfade));}
 			setLogicElementVar($id,17,0);
 		}
 		if ($V[18]==1) { //Radio Ã¼ber Namen abspielen
@@ -396,7 +389,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			$Radio = $sonos->get_station_url($name, $RadioStations);
 			$sonos->SetRadio($Radio['url'], $Radio['name']);
 			$sonos->Play();
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Radio: ($name)");}
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Radio: ".($name));}
 
 			setLogicElementVar($id,18,0);
 		}
