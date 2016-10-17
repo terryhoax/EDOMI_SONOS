@@ -22,8 +22,8 @@
 [e#19		=MP3	]
 [e#20		=MP3 Volume	#init=0	]
 [e#21		=Trace	#init=1]
-[e#22		=Volume up 	]
-[e#23		=Volume down]
+[e#22	TRIGGER		=Volume up 	]
+[e#23	TRIGGER		=Volume down]
 [e#24		=Volume Step 	#init=1]
 
 
