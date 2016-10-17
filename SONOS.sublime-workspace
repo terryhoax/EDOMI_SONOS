@@ -1,0 +1,265 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"setvo",
+				"setvol"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "Package Control Messages\n========================\n\nSublimerge 3\n------------\n\n  Sublimerge has just been upgraded to version 3.0.20\n  \n  It is highly recommended to restart Sublime Text before use.\n  ------------------------------------------------------------\n  \n  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n  !!                                                                                                       !!\n  !!                NOTE: THIS IS A BETA VERSION. PLEASE REPORT ANY BUGS YOU MAY ENCOUNTER.                !!\n  !!                                                                                                       !!\n  !!                                                                                                       !!\n  !!     http://www.sublimerge.com/support.html                                support@sublimerge.com      !!\n  !!                                                                                                       !!\n  !!     Issue Tracker: https://bitbucket.org/borysforytarz/sublimerge-3/issues?status=new&status=open     !!\n  !!                                                                                                       !!\n  !!                                                                                                       !!\n  !!                                                                                                       !!\n  !!     Please visit http://www.sublimerge.com/sm3/docs/ for more information.                            !!\n  !!                                                                                                       !!\n  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n  \n  \n  What's new?\n  ===========\n  \n  \n  Bug fixes:\n      - Fixed a possible crash during launch\n  \n  \n  \n  Please report any issues you may encounter using the form on http://www.sublimerge.com/support.html or\n  Issue Tracker (https://bitbucket.org/borysforytarz/sublimerge-3/issues?status=new&status=open)\n  \n  \n  \n  Simplified usage instructions\n  =============================\n  \n  In file view:\n  \n      [ctrl]+[alt]+[d]                      - display Quick Panel with Sublimerge commands available for current view\n  \n  \n  In diff view:\n  \n      Windows/Linux:\n  \n      [ctrl]+[down]                         - select next change\n      [ctrl]+[up]                           - select previous change\n    * [ctrl]+[left]                         - copy selected change (or active line) to left from right\n    * [ctrl]+[right]                        - copy selected change (or active line) to right from left\n      [ctrl]+[shift]+[left]                 - copy all changes to left from right\n      [ctrl]+[shift]+[right]                - copy all changes to right from left\n  \n      OS X:\n  \n      [alt]+[down]                          - select next change\n      [alt]+[up]                            - select previous change\n    * [alt]+[left]                          - copy selected change (or active line) to left from right\n    * [alt]+[right]                         - copy selected change (or active line) to right from left\n      [alt]+[shift]+[left]                  - copy all changes to left from right\n      [alt]+[shift]+[right]                 - copy all changes to right from left\n  \n      Common:\n  \n      [f3]                                  - swap panels\n      [f4]                                  - show changes navigator\n      [f5]                                  - recompare buffers\n  \n    * - if change is selected the command will copy its whole contents, otherwise will copy only the focused line\n  \n  \n  In directories diff view:\n  \n      [down]                              - select next file/directory\n      [up]                                - select previous file/directory\n      [left]                              - copy file/directory from right to left\n      [right]                             - copy file/directory from left to right\n      [enter]                             - enter sub directory / compare text files\n      [backspace]                         - enter parent directory\n  \n  \n      Windows/Linux:\n  \n      [ctrl]+[down]                       - select next different file/directory\n      [ctrl]+[up]                         - select previous different file/directory\n  \n  \n      OS X:\n  \n      [alt]+[down]                        - select next different file/directory\n      [alt]+[up]                          - select previous different file/directory\n  \n  \n      For convenience Sublimerge also supports standard OS X keyboard shortcuts for directories navigation:\n  \n      [cmd]+[down]                        - enter sub directory / compare text files\n      [cmd]+[up]                          - enter parent directory\n  \n  \n  Licensing\n  =========\n  \n  Sublimerge requires a license to be purchased for continued use. Please visit www.sublimerge.com/sm3/ for more\n  detailed information about licensing.\n  \n  \n  More information\n  ================\n  \n  For more information, troubleshooting, customizing settings and more, please visit www.sublimerge.com\n  \n  \n  By the way...\n  =============\n  \n  Take a break from your work and play my BF's Draughts on your iOS device!\n  Available on the App Store! :)\n  \n  http://www.bfdraughts.com/as/\n",
+			"settings":
+			{
+				"buffer_size": 5404,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "/C/Users/krone/AppData/Local/Temp/cd1ee226-ec6b-4438-b30b-40bd8149cb65/usr/local/edomi/www/admin/lbs/19000027_lbs.php",
+			"settings":
+			{
+				"buffer_size": 19632,
+				"encoding": "Western (Windows 1252)",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control:",
+				"Package Control: Enable Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/K/HAUS/KNX/edomi/LBS/SONOS/19000027_lbs.php",
+		"/C/Users/krone/AppData/Local/Temp/scp34394/usr/local/edomi/www/admin/lbs/19000027_lbs.php",
+		"/C/Users/krone/AppData/Local/Temp/scp48132/usr/local/edomi/www/admin/lbs/19000027_lbs.php",
+		"/C/Users/krone/AppData/Roaming/Sublime Text 3/Packages/Diffy/Diffy.sublime-settings",
+		"/K/HAUS/KNX/edomi/LBS/SONOS/sonosAccess.php",
+		"/C/Users/krone/AppData/Local/Temp/Temp1_19000202_.zip/19000202_lbs.php",
+		"/C/Users/krone/AppData/Local/Temp/Temp1_19000200_.zip/19000200_lbs.php"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"192.168.0.15",
+			"Volume",
+			"volume"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5404,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								74,
+								74
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/krone/AppData/Local/Temp/cd1ee226-ec6b-4438-b30b-40bd8149cb65/usr/local/edomi/www/admin/lbs/19000027_lbs.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5237,
+								5237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3960.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "SONOS.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
