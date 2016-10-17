@@ -69,7 +69,7 @@
 [v#21		= 0	] //Vergleicher Radiosender
 [v#22		= 0 ] //Lautstärke um Faktor E#22 erhöhen
 [v#23		= 0 ] //Lautstärke um Faktor E#22 veringern
-[v#24	= 0 ] //Faktor für die Lautstärkeveränderung
+[v#24		= 0 ] //Faktor für die Lautstärkeveränderung
 
 
 [v#100		= 0	]
