@@ -134,7 +134,7 @@ E23: Lautstärke um den Wert aus E24 veringern (wird bei 1 ausgelöst)
 E24: Faktor für die Lautstärkeanpassung (Standard=1)
 	
 	
-A1: Status Playmode (1 = Play, 2 = Pause, 3 = Stopp)
+A1: Status der Wiedergabe (1 = Play, 2 = Pause, 3 = Stopp)
 A2: Status Volume (0 bis 50)
 A3: Hier wird der Radiosender als Text ausgegeben
 A4: Titel 
@@ -257,7 +257,7 @@ if ($E=getLogicEingangDataAll($id)) {
 $ip = $E[2]['value'];
 $V=getLogicElementVarAll($id);
 
-if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> SONOS EXEC started.");}
+if($E[21]['value']==1){debug($id, "SONOS ".$ip." : -> SONOS EXEC started.");}
 			exec("ping -c 2 $ip", $array, $return);
 			if($return){
 			debug($id,'SONOS - EXEC : Ping nicht erreichbar: '.$ip);
@@ -305,9 +305,9 @@ $transportInfo=$sonos->GetTransportInfo();
 		}
 		if ($V[7]==1) {//Playmode
 			$E=getLogicEingangDataAll($id);
-			$sonos->SetPlayMode(round($E[7]['value']));
+			$sonos->SetPlayMode($E[7]['value']);
 			$playmode = $sonos->GetTransportSettings();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".($playmode));}
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".(round($E[7]['value'])));}
 			setLogicElementVar($id,7,0);
 		}
 		if ($V[8]==1) {//Mute
