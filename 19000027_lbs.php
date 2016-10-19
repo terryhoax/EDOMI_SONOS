@@ -2,7 +2,7 @@
 [name		= SONOS Baustein (v2.6.1)	]
 
 [e#1	TRIGGER		= Starten	#init=1]
-[e#2	IMPORTANT		= ipAddr	#init=192.168.0.15 			]	
+[e#2	IMPORTANT		= ipAddr	#init=192.168.0.214			]	
 [e#3	TRIGGER		= Play		]	
 [e#4	TRIGGER		= Stop		]	
 [e#5	TRIGGER		= Pause		]	
@@ -267,6 +267,7 @@ if($E[21]['value']==1){debug($id, "SONOS ".$ip." : -> SONOS EXEC started.");}
 
 
 }
+
 $sonos = new SonosAccess($ip);
 while(getSysInfo(1)>=1) {	
 
@@ -274,47 +275,53 @@ if ($E=getLogicEingangDataAll($id)) {
 		$V=getLogicElementVarAll($id);
   
 	}
-		
+if($E[21]['value']==1){debug($id, "SONOS ".$ip." : -> Aufruf GetTransportInfo");}
 //$sonos = new SonosAccess($ip);
 $transportInfo=$sonos->GetTransportInfo();
 
 		if ($V[3]==1) {//Play
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Play");}
 			$sonos->Play();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Play");}
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Play");}
 			setLogicElementVar($id,3,0);
 		}
 		if ($V[4]==1) {//Stop
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Stop");}
 			$sonos->Stop();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Stop");}
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Stop");}
 			setLogicElementVar($id,4,0);
 		}
 		if ($V[5]==1) {//Pause
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Pause");}
 			$sonos->Pause();
 			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Set Pause");}
 			setLogicElementVar($id,5,0);
 		}
 		if ($V[6]==1) {//Volume
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Volume: ".($setvol));}
 			$E=getLogicEingangDataAll($id);
 			$setvol=$E[6]['value'];
 			$sonos->SetVolume($setvol);
-					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Volume: ".($setvol));}
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Volume: ".($setvol));}
 			usleep(500);
 			$volume=$sonos-> GetVolume();
 			setLogicLinkAusgang($id,2,$volume);
 			setLogicElementVar($id,6,0);
 		}
 		if ($V[7]==1) {//Playmode
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".(round($E[7]['value'])));}
 			$E=getLogicEingangDataAll($id);
-			$sonos->SetPlayMode($E[7]['value']);
+			$sonos->SetPlayMode(round($E[7]['value']));
 			$playmode = $sonos->GetTransportSettings();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".(round($E[7]['value'])));}
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playmode: ".(round($E[7]['value'])));}
 			setLogicElementVar($id,7,0);
 		}
 		if ($V[8]==1) {//Mute
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ".($mute));}
 			$E=getLogicEingangDataAll($id);
 			$sonos->SetMute($E[8]['value']);
 			$mute = $sonos->GetMute();
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ".($mute));}
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Mute: ".($mute));}
 			setLogicElementVar($id,8,0);
 		}
 		if ($V[9]==1) { //Play Radio per uri
@@ -328,6 +335,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			setLogicElementVar($id,9,0);
 		}
 		if ($V[10]==1) { // Play Playliste per uri
+				if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Playliste Name: ".$uri);}
 			$zoneinfo=$sonos->GetZoneGroupAttributes();
 			$sonos->ClearQueue();
 			$E=getLogicEingangDataAll($id);
@@ -376,6 +384,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			setLogicElementVar($id,16,0);
 		}
 		if ($V[17]==1) { //Crossfade
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Crossfade: ".($crossfade));}
 			$E=getLogicEingangDataAll($id); 
 			$sonos->SetCrossfade($E[17]['value']);
 			$crossfade = $sonos->GetLoudness();
@@ -383,6 +392,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			setLogicElementVar($id,17,0);
 		}
 		if ($V[18]==1) { //Radio über Namen abspielen
+					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Radio: ".($name));}
 			$E=getLogicEingangDataAll($id); 
 			$RadioStations=$sonos->get_available_stations();
 			$name=$E[18]['value'];
@@ -390,7 +400,6 @@ $transportInfo=$sonos->GetTransportInfo();
 			$sonos->SetRadio($Radio['url'], $Radio['name']);
 			$sonos->Play();
 					if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> Radio: ".($name));}
-
 			setLogicElementVar($id,18,0);
 		}
 		if ($V[19]==1) { //MP3 abspielen
@@ -440,11 +449,10 @@ $crossfade = $sonos->GetLoudness();
 $zoneinfo=$sonos->GetZoneGroupAttributes();
 
 	if (!empty($mediaInfo['title'])) {
-			
+			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> empty$mediaInfotitle ");}
 			if ($V[118] != 1 && $transportInfo == 1) {
 							setLogicElementVar($id,118,1);
 							setLogicLinkAusgang($id,5," ");
-							
 							setLogicElementVar($id,120,$transportInfo);
 							}
 			if ($V[119] != 1 && $transportInfo == 1) {
@@ -569,7 +577,7 @@ if ($transportInfo == 3 && $transportInfo!=getLogicElementVar($id,120) ) {
 	usleep(1000000);		
 
 }
-
+if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> sql_disconnect");}
 sql_disconnect();
 
 function debug($id,$msg)
