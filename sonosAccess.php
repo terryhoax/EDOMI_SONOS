@@ -63,7 +63,6 @@ $this->SetAVTransportURI($mediaInfo["CurrentURI"],$mediaInfo["CurrentURIMetaData
 
 }
   
-  
   public function GetSonosPlaylist()
  {
 			$P_Associations = Array();
