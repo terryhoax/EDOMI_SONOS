@@ -275,7 +275,7 @@ if ($E=getLogicEingangDataAll($id)) {
 		$V=getLogicElementVarAll($id);
   
 	}
-if($E[21]['value']==1){debug($id, "SONOS ".$ip." : -> Aufruf GetTransportInfo");}
+//if($E[21]['value']==1){debug($id, "SONOS ".$ip." : -> Aufruf GetTransportInfo");}
 //$sonos = new SonosAccess($ip);
 $transportInfo=$sonos->GetTransportInfo();
 
