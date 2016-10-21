@@ -18,7 +18,7 @@
 [e#15		=Bass	]
 [e#16		=Treble	]
 [e#17		=Crossfade	]
-[e#18		=Radionamen über Namen	]
+[e#18		=Radionamen ï¿½ber Namen	]
 [e#19		=MP3	]
 [e#20		=MP3 Volume	#init=0	]
 [e#21		=Trace	#init=1]
@@ -63,13 +63,13 @@
 [v#15		= 0	] //Bass
 [v#16		= 0	] //Treble
 [v#17		= 0	] //Crossfade
-[v#18		= 0	] //Radio über Namen
+[v#18		= 0	] //Radio ï¿½ber Namen
 [v#19		= 0	] //MP3 abspielen
 [v#20		= 0	] //Vergleicher AlbumArt Playliste
 [v#21		= 0	] //Vergleicher Radiosender
-[v#22		= 0 ] //Lautstärke um Faktor E#22 erhöhen
-[v#23		= 0 ] //Lautstärke um Faktor E#22 veringern
-[v#24		= 0 ] //Faktor für die Lautstärkeveränderung
+[v#22		= 0 ] //Lautstï¿½rke um Faktor E#22 erhï¿½hen
+[v#23		= 0 ] //Lautstï¿½rke um Faktor E#22 veringern
+[v#24		= 0 ] //Faktor fï¿½r die Lautstï¿½rkeverï¿½nderung
 
 
 [v#100		= 0	]
@@ -102,36 +102,36 @@
 
 
 ###[HELP]###
-Die Datei sonosAccess.php wird benötigt. Datei ist im Download dabei.
+Die Datei sonosAccess.php wird benï¿½tigt. Datei ist im Download dabei.
 Diese muss im Ordner /usr/local/edomi/main/include/php liegen.
 Die Classen stammen von https://github.com/tkugelberg/SymconSonos. Aber bitte nicht genau diese Verwenden
 von der Webseite. Hab Sie ein wenig angepasst!
 
 Der SONOS Baustein wird automatisch gestartet, sobald EDOMI gestartet wird (E1 hat den Initialwert 1).
-E1: Signal 1 = Startet Baustein (Dämon)
-E2: KO für iP Adesse vom Sonos Gerät
-E3: KO für Play (wird bei 1 ausgelöst, Pause bei 0)
-E4: KO für Stop (wird bei 1 ausgelöst)
-E5: KO für Pause (wird bei 1 ausgelöst)
-E6: KO für Volume (0 bis 50)
-E7: KO für Playmode (0= "NORMAL", 1= "REPEAT_ALL", 2= "REPEAT_ONE", 3= "SHUFFLE_NOREPEAT", 4= "SHUFFLE", 5= "SHUFFLE_REPEAT_ONE")
-E8: KO für Mute (0=Off / 1=On)
-E9: KO für Wahl Radiosender  (String per KO übergeben! == z.B. "x-sonosapi-stream:s68934?sid=254&flags=8224&sn=0")
-E10: KO für Playlist (String per KO übergeben! == z.B. "x-rincon-queue:RINCON_B8E9378E827A01400#0")
-E11: KO für Next (wird bei 1 ausgelöst)
-E12: KO für Previous (wird bei 1 ausgelöst)
-E13: KO für Rewind (wird bei 1 ausgelöst)
-E14: KO für Loudness (0= Off / 1=On)
-E15: KO für Bass (-10 bis 10)
-E16: KO für Treble (-10 bis 10)
-E17: KO für Crossfade (0= Off / 1=On)
-E18: KO für Radisender über Namen die in der sonos.Access.php gespeichert sind. (z.B als KO "Bayern 3")
-E19: KO für MP3 file (kann als "http://www.sounds.com/blubb.mp3" oder über einen Share "//mp3/sonos/bla.mp3" Übergeben werden)
-E20: KO für MP3 Lautstärke (Hier kann die Lautstärke für das Abspielen vom MP3 File Übergeben werde)
+E1: Signal 1 = Startet Baustein (Dï¿½mon)
+E2: KO fï¿½r iP Adesse vom Sonos Gerï¿½t
+E3: KO fï¿½r Play (wird bei 1 ausgelï¿½st, Pause bei 0)
+E4: KO fï¿½r Stop (wird bei 1 ausgelï¿½st)
+E5: KO fï¿½r Pause (wird bei 1 ausgelï¿½st)
+E6: KO fï¿½r Volume (0 bis 50)
+E7: KO fï¿½r Playmode (0= "NORMAL", 1= "REPEAT_ALL", 2= "REPEAT_ONE", 3= "SHUFFLE_NOREPEAT", 4= "SHUFFLE", 5= "SHUFFLE_REPEAT_ONE")
+E8: KO fï¿½r Mute (0=Off / 1=On)
+E9: KO fï¿½r Wahl Radiosender  (String per KO ï¿½bergeben! == z.B. "x-sonosapi-stream:s68934?sid=254&flags=8224&sn=0")
+E10: KO fï¿½r Playlist (String per KO ï¿½bergeben! == z.B. "x-rincon-queue:RINCON_B8E9378E827A01400#0")
+E11: KO fï¿½r Next (wird bei 1 ausgelï¿½st)
+E12: KO fï¿½r Previous (wird bei 1 ausgelï¿½st)
+E13: KO fï¿½r Rewind (wird bei 1 ausgelï¿½st)
+E14: KO fï¿½r Loudness (0= Off / 1=On)
+E15: KO fï¿½r Bass (-10 bis 10)
+E16: KO fï¿½r Treble (-10 bis 10)
+E17: KO fï¿½r Crossfade (0= Off / 1=On)
+E18: KO fï¿½r Radisender ï¿½ber Namen die in der sonos.Access.php gespeichert sind. (z.B als KO "Bayern 3")
+E19: KO fï¿½r MP3 file (kann als "http://www.sounds.com/blubb.mp3" oder ï¿½ber einen Share "//mp3/sonos/bla.mp3" ï¿½bergeben werden)
+E20: KO fï¿½r MP3 Lautstï¿½rke (Hier kann die Lautstï¿½rke fï¿½r das Abspielen vom MP3 File ï¿½bergeben werde)
 E21: Logging aktivieren/deaktivieren
-E22: Lautstärke um den Wert aus E24 erhöhen (wird bei 1 ausgelöst)
-E23: Lautstärke um den Wert aus E24 veringern (wird bei 1 ausgelöst)
-E24: Faktor für die Lautstärkeanpassung (Standard=1)
+E22: Lautstï¿½rke um den Wert aus E24 erhï¿½hen (wird bei 1 ausgelï¿½st)
+E23: Lautstï¿½rke um den Wert aus E24 veringern (wird bei 1 ausgelï¿½st)
+E24: Faktor fï¿½r die Lautstï¿½rkeanpassung (Standard=1)
 	
 	
 A1: Status der Wiedergabe (1 = Play, 2 = Pause, 3 = Stopp)
@@ -140,7 +140,7 @@ A3: Hier wird der Radiosender als Text ausgegeben
 A4: Titel 
 A5: Artist
 A6: Album
-A7: url fÃ¼r Cover (Bei Radiosendern nur wenn der Sender über E18 Übergeben wird)
+A7: url fÃ¼r Cover (Bei Radiosendern nur wenn der Sender ï¿½ber E18 ï¿½bergeben wird)
 A8: Duration
 A9: RelTime
 A10: leer
@@ -150,15 +150,15 @@ A13: Status Treble (-10 bis 10)
 A14: Status Mute (0=Off / 1=On)
 A15: Status Playmode (0= "NORMAL", 1= "REPEAT_ALL", 2= "REPEAT_ONE", 3= "SHUFFLE_NOREPEAT", 4= "SHUFFLE", 5= "SHUFFLE_REPEAT_ONE")
 A16: Status Crossfade (0= Off / 1=On)
-A17: CurrentURI Einfach an der Sonos App Radiosender oder Playliste auswÃ¤hlen. (dieser URI kann als Playliste oder Radiosender in ein KO kopiert werden und dann an E9 oder E10 Übergeben werden.  Wird nur im Debug ausgegeben!)
+A17: CurrentURI Einfach an der Sonos App Radiosender oder Playliste auswÃ¤hlen. (dieser URI kann als Playliste oder Radiosender in ein KO kopiert werden und dann an E9 oder E10 ï¿½bergeben werden.  Wird nur im Debug ausgegeben!)
 
 Changelog:
 ==========
 v1.5: Initial version	
 v2.0: Performance und Code Anpassung
-v2.2: Send by change bei den Ausgängen
+v2.2: Send by change bei den Ausgï¿½ngen
 v2.5: Send by change bei den A1 Ausgang angepasst
-v2.6: Lautstärke up/down hinzugefügt
+v2.6: Lautstï¿½rke up/down hinzugefï¿½gt
 
 ###[/HELP]###
 
@@ -418,7 +418,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			//20161014 kr:
 			//usleep(500);
 			//$volume=$sonos-> GetVolume();
-			//damit keine Verzögerung beim mehrfachen Erhöhen der LS entsteht, wird der berechnete Weert auf den Ausgang geschrieben.
+			//damit keine Verzï¿½gerung beim mehrfachen Erhï¿½hen der LS entsteht, wird der berechnete Weert auf den Ausgang geschrieben.
 			setLogicLinkAusgang($id,2,$setvol);
 			setLogicElementVar($id,22,0);
 		}
@@ -431,7 +431,7 @@ $transportInfo=$sonos->GetTransportInfo();
 			//20161014 kr:
 			//usleep(500);
 			//$volume=$sonos-> GetVolume();
-			//damit keine Verzögerung beim mehrfachen Erhöhen der LS entsteht, wird der berechnete Weert auf den Ausgang geschrieben.
+			//damit keine Verzï¿½gerung beim mehrfachen Erhï¿½hen der LS entsteht, wird der berechnete Weert auf den Ausgang geschrieben.
 			setLogicLinkAusgang($id,2,$setvol);
 			setLogicElementVar($id,23,0);
 		}
@@ -449,7 +449,7 @@ $crossfade = $sonos->GetLoudness();
 $zoneinfo=$sonos->GetZoneGroupAttributes();
 
 	if (!empty($mediaInfo['title'])) {
-			if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> empty$mediaInfotitle ");}
+			//if($E[21]['value']==1){debug($id, "SONOS - EXEC : -> empty$mediaInfotitle ");}
 			if ($V[118] != 1 && $transportInfo == 1) {
 							setLogicElementVar($id,118,1);
 							setLogicLinkAusgang($id,5," ");
